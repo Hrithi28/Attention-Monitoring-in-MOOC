@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Ethics Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Navigation -->
+        <div class="header">
+            <div class="form-title">
+                <h1>Research Ethics Application</h1>
+                <div class="response-count">
+                    <span id="responseCount">0 responses</span>
+                </div>
+            </div>
+            
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="questions">
+                    <span class="material-icons">quiz</span>
+                    Questions
+                </button>
+                <button class="tab-btn" data-tab="responses">
+                    <span class="material-icons">assessment</span>
+                    Responses (<span id="tabResponseCount">0</span>)
+                </button>
+                <button class="tab-btn" data-tab="individual">
+                    <span class="material-icons">person</span>
+                    Individual
+                </button>
+                <button class="tab-btn" data-tab="summary">
+                    <span class="material-icons">summarize</span>
+                    Summary
+                </button>
+            </div>
+        </div>
+
+        <!-- Email Collection Section -->
+        <div class="email-section">
+            <div class="email-info">
+                <span class="material-icons">email</span>
+                <span>Collect email addresses</span>
+                <label class="switch">
+                    <input type="checkbox" id="collectEmails" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Questions Tab Content -->
+        <div id="questions-tab" class="tab-content active">
+            <form id="researchForm" class="form-container">
+                <!-- Email Field -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Email Address <span class="required">*</span>
+                    </label>
+                    <input type="email" name="email" required class="form-input">
+                </div>
+
+                <!-- Applicant Name -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Applicant Name <span class="required">*</span>
+                    </label>
+                    <input type="text" name="applicantName" required class="form-input">
+                </div>
+
+                <!-- Register Number -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Register Number <span class="required">*</span>
+                    </label>
+                    <input type="text" name="registerNumber" required class="form-input">
+                </div>
+
+                <!-- University -->
+                <div class="question-block">
+                    <label class="question-label">
+                        University <span class="required">*</span>
+                    </label>
+                    <input type="text" name="university" required class="form-input">
+                </div>
+
+                <!-- Degree -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Degree <span class="required">*</span>
+                    </label>
+                    <input type="text" name="degree" required class="form-input">
+                </div>
+
+                <!-- Gender -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Gender <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="male" required>
+                            <span class="radio-custom"></span>
+                            Male
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="female" required>
+                            <span class="radio-custom"></span>
+                            Female
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="prefer-not-to-say" required>
+                            <span class="radio-custom"></span>
+                            Prefer not to say
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Date of Birth <span class="required">*</span>
+                    </label>
+                    <div class="date-input-group">
+                        <select name="dobDay" required class="date-select">
+                            <option value="">DD</option>
+                        </select>
+                        <select name="dobMonth" required class="date-select">
+                            <option value="">MM</option>
+                        </select>
+                        <select name="dobYear" required class="date-select">
+                            <option value="">YYYY</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Phone Number <span class="required">*</span>
+                    </label>
+                    <input type="tel" name="phoneNumber" required class="form-input">
+                </div>
+
+                <!-- Mother Tongue -->
+                <div class="question-block">
+                    <label class="question-label">
+                        What is your mother tongue? <span class="required">*</span>
+                    </label>
+                    <input type="text" name="motherTongue" required class="form-input">
+                </div>
+
+                <!-- Permanent Address -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Permanent Address <span class="required">*</span>
+                    </label>
+                    <textarea name="permanentAddress" required class="form-textarea"></textarea>
+                </div>
+
+                <!-- Temporary Address -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Temporary Address <span class="required">*</span>
+                    </label>
+                    <textarea name="temporaryAddress" required class="form-textarea"></textarea>
+                </div>
+
+                <!-- District -->
+                <div class="question-block">
+                    <label class="question-label">
+                        District <span class="required">*</span>
+                    </label>
+                    <input type="text" name="district" required class="form-input">
+                </div>
+
+                <!-- State -->
+                <div class="question-block">
+                    <label class="question-label">
+                        State <span class="required">*</span>
+                    </label>
+                    <input type="text" name="state" required class="form-input">
+                </div>
+
+                <!-- Country -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Country <span class="required">*</span>
+                    </label>
+                    <input type="text" name="country" required class="form-input">
+                </div>
+
+                <!-- Applicant Type -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Applicant Type <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="applicantType" value="+12-student" required>
+                            <span class="radio-custom"></span>
+                            +12 Student
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="applicantType" value="ug-student" required>
+                            <span class="radio-custom"></span>
+                            UG Student
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="applicantType" value="pg-student" required>
+                            <span class="radio-custom"></span>
+                            PG Student
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="applicantType" value="diploma" required>
+                            <span class="radio-custom"></span>
+                            Diploma
+                        </label>
+                    </div>
+                </div>
+
+                <!-- School Name -->
+                <div class="question-block">
+                    <label class="question-label">
+                        What is your school name? <span class="required">*</span>
+                    </label>
+                    <input type="text" name="schoolName" required class="form-input">
+                </div>
+
+                <!-- College Name -->
+                <div class="question-block">
+                    <label class="question-label">
+                        What is your college name? <span class="required">*</span>
+                    </label>
+                    <input type="text" name="collegeName" required class="form-input">
+                </div>
+
+                <!-- Year of Study -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Which year are you studying? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="yearOfStudy" value="i-year" required>
+                            <span class="radio-custom"></span>
+                            I Year
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="yearOfStudy" value="ii-year" required>
+                            <span class="radio-custom"></span>
+                            II Year
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="yearOfStudy" value="iii-year" required>
+                            <span class="radio-custom"></span>
+                            III Year
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="yearOfStudy" value="iv-year" required>
+                            <span class="radio-custom"></span>
+                            IV Year
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="yearOfStudy" value="other" required>
+                            <span class="radio-custom"></span>
+                            Other
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Department -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Department Studying <span class="required">*</span>
+                    </label>
+                    <input type="text" name="department" required class="form-input">
+                </div>
+
+                <!-- Session Date -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Session Date <span class="required">*</span>
+                    </label>
+                    <div class="date-input-group">
+                        <select name="sessionDay" required class="date-select">
+                            <option value="">DD</option>
+                        </select>
+                        <select name="sessionMonth" required class="date-select">
+                            <option value="">MM</option>
+                        </select>
+                        <select name="sessionYear" required class="date-select">
+                            <option value="">YYYY</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Session Time -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Session Time <span class="required">*</span>
+                    </label>
+                    <div class="time-input-group">
+                        <select name="sessionHour" required class="time-select">
+                            <option value="">HH</option>
+                        </select>
+                        <select name="sessionMinute" required class="time-select">
+                            <option value="">MM</option>
+                        </select>
+                        <select name="sessionAmPm" required class="time-select">
+                            <option value="">AM/PM</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Research Data Interest -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Are you interested to give your data for research purpose? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="researchDataInterest" value="yes" required>
+                            <span class="radio-custom"></span>
+                            Yes
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="researchDataInterest" value="no" required>
+                            <span class="radio-custom"></span>
+                            No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="researchDataInterest" value="maybe" required>
+                            <span class="radio-custom"></span>
+                            Maybe
+                        </label>
+                    </div>
+                </div>
+
+                <!-- EEG and Webcam Consent -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Are you willing to wear EEG device and web camera for data collection? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="eegWebcamConsent" value="yes" required>
+                            <span class="radio-custom"></span>
+                            Yes
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="eegWebcamConsent" value="no" required>
+                            <span class="radio-custom"></span>
+                            No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="eegWebcamConsent" value="maybe" required>
+                            <span class="radio-custom"></span>
+                            Maybe
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Data Usage Consent -->
+                <div class="question-block">
+                    <label class="question-label">
+                        Are you willing to give your data for research purpose use? <span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="dataUsageConsent" value="yes" required>
+                            <span class="radio-custom"></span>
+                            Yes
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="dataUsageConsent" value="no" required>
+                            <span class="radio-custom"></span>
+                            No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="dataUsageConsent" value="maybe" required>
+                            <span class="radio-custom"></span>
+                            Maybe
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn">Submit</button>
+                    <button type="button" class="clear-btn" onclick="clearForm()">Clear form</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Responses Tab Content -->
+        <div id="responses-tab" class="tab-content">
+            <div class="responses-header">
+                <h2>Form Responses</h2>
+                <button class="export-btn" onclick="exportToCSV()">
+                    <span class="material-icons">download</span>
+                    Export to CSV
+                </button>
+            </div>
+            <div class="responses-table-container">
+                <table id="responsesTable" class="responses-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Email</th>
+                            <th>Applicant Name</th>
+                            <th>Register Number</th>
+                            <th>University</th>
+                            <th>Gender</th>
+                            <th>Applicant Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="responsesTableBody">
+                        <!-- Responses will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Individual Tab Content -->
+        <div id="individual-tab" class="tab-content">
+            <div class="individual-response-container">
+                <h2>Individual Response</h2>
+                <div class="response-navigation">
+                    <button id="prevResponse" class="nav-btn" onclick="navigateResponse(-1)">
+                        <span class="material-icons">chevron_left</span>
+                        Previous
+                    </button>
+                    <span id="responseIndicator">No responses</span>
+                    <button id="nextResponse" class="nav-btn" onclick="navigateResponse(1)">
+                        Next
+                        <span class="material-icons">chevron_right</span>
+                    </button>
+                </div>
+                <div id="individualResponseContent" class="individual-response-content">
+                    <p>No responses to display</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Tab Content -->
+        <div id="summary-tab" class="tab-content">
+            <div class="summary-container">
+                <h2>Response Summary</h2>
+                <div id="summaryContent" class="summary-content">
+                    <p>No responses to summarize</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
